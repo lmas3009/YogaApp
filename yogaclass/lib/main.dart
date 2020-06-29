@@ -1,6 +1,6 @@
-import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:yogaclass/Sideone.dart';
+import 'package:flare_flutter/flare_actor.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,9 +27,15 @@ class _MyHomePageState extends State<MyHomePage> {
  
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold( 
       body: Container(
         width: double.infinity,
+        decoration: new BoxDecoration(
+                image: new DecorationImage(
+                  image: new AssetImage("assets/images/back.jpg"),
+                  fit: BoxFit.fill,
+                ),
+              ),
            child:InkWell(
              onTap: (){
               Navigator.push(
@@ -37,7 +43,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     MaterialPageRoute(builder: (context) => Sideone()),
                 );
              },
-             child: FlareActor("assets/screen.flr",animation: 'Screen',)
+            child: FlareActor("assets/screen.flr", 
+                animation: "Untitled", 
+              ),
             ),
       )
     );

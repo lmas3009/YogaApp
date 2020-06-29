@@ -38,22 +38,33 @@ class _Week1State extends State<Week1> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                     Text("Day: "+(index+1).toString(),style: TextStyle(color: Colors.white),textAlign: TextAlign.center,),
+                     Text("Day: "+(index+1).toString(),style: TextStyle(color: Colors.white,fontSize:30,fontStyle: FontStyle.normal),textAlign: TextAlign.center,),
                       new Container(
                         margin:const EdgeInsets.only(bottom: 40),
                       ),
-                     ChewieListItem(
+                      Container(
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0xffffffff),
+                              offset: Offset(0, 3),
+                              blurRadius: 6
+                            )
+                          ]
+                        ),
+                     child:ChewieListItem(
                         videoPlayerController: VideoPlayerController.asset(
                           beginer[index].info,
                         ),
                         looping: true,
+                      ),
                       ),
                       new Container(
                         margin:const EdgeInsets.only(bottom: 40),
                       ),
                       Container(
                         margin: const EdgeInsets.only(left: 20,right: 20),
-                     child:Text(beginer[index].title,style: TextStyle(color: Colors.white),textAlign: TextAlign.center,),
+                     child:Text(beginer[index].title,style: TextStyle(color: Colors.white,fontSize: 30),textAlign: TextAlign.center,),
                       ),
                       new Container(
                         margin:const EdgeInsets.only(top: 40),
